@@ -8,18 +8,38 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
+import javax.persistence.*;
 import java.util.Collection;
 import java.util.List;
+
 
 @AllArgsConstructor
 @Builder
 @Data
 @NoArgsConstructor
+@Table(name = "users")
+@Entity
 public class User implements UserDetails {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String login;
+
+
+    @Column(nullable = false)
+    private String name;
+
+    @Column(nullable = false,unique = true)
     private String email;
+
+    @Column(nullable = false)
     private String password;
+
+    @ManyToMany(targetEntity = Message.class, fetch = FetchType.LAZY) // ленивая загрузка, чтобы не выгружались сообщения, каскад не нужен
+    @JoinTable(name = "user_message", joinColumns = @JoinColumn(name = "user_id"),
+            inverseJoinColumns = @JoinColumn(name = "message_id"))
+    private List<Message> messages;
+
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
@@ -28,7 +48,7 @@ public class User implements UserDetails {
 
     @Override
     public String getUsername() {
-        return login;
+        return email;
     }
 
     @Override
