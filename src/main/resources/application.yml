@@ -1,1 +1,17 @@
+server:
+  servlet:
+    context-path: /api
 
+spring:
+  datasource:
+    username: root
+    password: rootroot
+    url: jdbc:postgresql://localhost:5432/copyslack
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    generate-ddl: true
+    properties:
+      hibernate:
+        ddl-auto: update
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+    show-sql: false
