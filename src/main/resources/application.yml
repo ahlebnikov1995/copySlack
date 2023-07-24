@@ -4,8 +4,8 @@ server:
 
 spring:
   datasource:
-    username: root
-    password: rootroot
+    username: postgres
+    password: admin
     url: jdbc:postgresql://localhost:5432/copyslack
     driver-class-name: org.postgresql.Driver
   jpa:
