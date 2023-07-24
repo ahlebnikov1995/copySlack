@@ -2,6 +2,7 @@ plugins {
     id 'java'
     id 'org.springframework.boot' version '2.7.14'
     id 'io.spring.dependency-management' version '1.0.15.RELEASE'
+    id 'com.diffplug.spotless' version '6.12.0'
 }
 
 group = 'com.copySlack'
@@ -17,12 +18,23 @@ configurations {
     }
 }
 
+spotless {
+    java {
+        target 'src/main/java/**/*.java', 'src/test/java/**/*.java'
+        googleJavaFormat()
+        importOrderFile		 rootProject.file('gradle/spotless.importorder')
+        eclipse().configFile rootProject.file('gradle/eclipse-java-google-style.xml')
+    }
+}
+
 repositories {
     mavenCentral()
 }
 
 dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+    implementation 'org.springframework.boot:spring-boot-starter-data-redis'
+    implementation 'org.springframework.boot:spring-boot-starter-websocket'
     implementation 'org.springframework.boot:spring-boot-starter-security'
     implementation 'org.springframework.boot:spring-boot-starter-web'
     compileOnly 'org.projectlombok:lombok'

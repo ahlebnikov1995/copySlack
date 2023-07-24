@@ -6,8 +6,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class CopySlackApplication {
 
-    public static void main(String[] args) {
-        SpringApplication.run(CopySlackApplication.class, args);
-    }
-
+  public static void main(String[] args) {
+    SpringApplication.run(CopySlackApplication.class, args);
+  }
 }
