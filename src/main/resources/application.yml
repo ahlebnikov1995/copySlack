@@ -3,10 +3,15 @@ server:
     context-path: /api
 
 spring:
+
+  redis:
+    host: localhost
+    password: SECRET_PASSWORD
+
   datasource:
-    username: postgres
-    password: admin
-    url: jdbc:postgresql://localhost:5432/copyslack
+    username: root
+    password: root_password
+    url: jdbc:postgresql://localhost:5432/db
     driver-class-name: org.postgresql.Driver
   jpa:
     generate-ddl: true
