@@ -36,12 +36,12 @@ public class User implements UserDetails {
   @Column(nullable = false)
   private String password;
 
-  @ManyToMany(targetEntity = Message.class, fetch = FetchType.LAZY) // ленивая загрузка, чтобы не
+  @ManyToMany(targetEntity = Chat.class, fetch = FetchType.LAZY) // ленивая загрузка, чтобы не
   // выгружались сообщения, каскад
   // не нужен
-  @JoinTable(name = "user_message", joinColumns = @JoinColumn(name = "user_id"),
-      inverseJoinColumns = @JoinColumn(name = "message_id"))
-  private List<Message> messages;
+  @JoinTable(name = "user_chats", joinColumns = @JoinColumn(name = "user_id"),
+      inverseJoinColumns = @JoinColumn(name = "chat_id"))
+  private List<Chat> chats;
 
   @Override
   public Collection<? extends GrantedAuthority> getAuthorities() {
