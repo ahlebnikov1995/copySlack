@@ -1,10 +1,11 @@
-package com.copyslack.copyslack.model;
+package com.copyslack.copyslack.model.entity;
 
 import java.util.Collection;
 import java.util.List;
 
 import javax.persistence.*;
 
+import com.copyslack.copyslack.model.entity.Message;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;

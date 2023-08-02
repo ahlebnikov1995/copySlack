@@ -13,7 +13,7 @@ import org.springframework.stereotype.Component;
 import org.springframework.web.filter.OncePerRequestFilter;
 
 import com.copyslack.copyslack.cache.ratelimiter.RateLimiterCache;
-import com.copyslack.copyslack.eception.message.AuthResponse;
+import com.copyslack.copyslack.model.dto.message.AuthResponse;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import lombok.RequiredArgsConstructor;

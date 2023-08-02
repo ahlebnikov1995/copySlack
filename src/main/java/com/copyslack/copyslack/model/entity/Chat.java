@@ -1,4 +1,4 @@
-package com.copyslack.copyslack.model;
+package com.copyslack.copyslack.model.entity;
 
 import javax.persistence.*;
 

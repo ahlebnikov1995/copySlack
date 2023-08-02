@@ -1,4 +1,4 @@
-package com.copyslack.copyslack.eception.message;
+package com.copyslack.copyslack.model.dto.message;
 
 import org.springframework.http.HttpStatus;
 

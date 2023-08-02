@@ -1,4 +1,4 @@
-package com.copyslack.copyslack.eception.message;
+package com.copyslack.copyslack.model.dto.message;
 
 public interface ApiResponse {
 

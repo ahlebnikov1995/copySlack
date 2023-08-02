@@ -1,6 +1,6 @@
-package com.copyslack.copyslack.eception;
+package com.copyslack.copyslack.model.dto.exception;
 
-import com.copyslack.copyslack.eception.message.ApiResponse;
+import com.copyslack.copyslack.model.dto.message.ApiResponse;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import lombok.AllArgsConstructor;
